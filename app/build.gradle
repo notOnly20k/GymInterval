@@ -31,6 +31,7 @@ android {
     }
 }
 
+def rx_version="3.0.0"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -41,12 +42,16 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'com.github.tony19:logback-android:2.0.0'
 
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation "io.reactivex.rxjava3:rxandroid:$rx_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rx_version"
 
     "com.android.databinding:compiler:$android_gradle_version"
 
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.5.0'
     implementation 'com.github.bumptech.glide:glide:4.5.0'
     'com.github.bumptech.glide:compiler:4.5.0'
+
+    implementation "com.android.support:design:$support_library_version"
+
+
 }

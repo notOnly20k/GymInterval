@@ -23,6 +23,14 @@ abstract class BaseViewModel: ViewModel(),LifecycleObserver {
 
     }
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    open fun onDestory() {
+        disposable?.dispose()
+        disposable = null
+
+    }
+
+
     @Suppress("NOTHING_TO_INLINE")
     inline fun Disposable.bindLifecycle() : Disposable {
         bindToLifecycle(this)

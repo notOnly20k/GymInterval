@@ -16,6 +16,7 @@ abstract class BaseViewModelActivity<VM : BaseViewModel, VB : ViewDataBinding>:B
         viewModel = onCreateViewModel()
 
         lifecycle.addObserver(viewModel)
+        binding.lifecycleOwner=this
 
         setContentView(binding.root)
     }
